@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <label><!-- Candidate --></label>
+        <name>Candidate__c</name>
+        <relationshipLabel><!-- Campaign Events --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Campaign Events --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Event Date --></label>
+        <name>Event_Date__c</name>
+    </fields><fields>
+        <label><!-- Event Location --></label>
+        <name>Event_Location__c</name>
+    </fields><fields>
+        <label><!-- Expected Revenue --></label>
+        <name>Expected_Revenue__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>Campaign Event</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>Campaign Events</value>
+    </caseValues><startsWith>Consonant</startsWith></CustomObjectTranslation>

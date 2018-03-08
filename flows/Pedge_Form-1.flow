@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <choices>
+        <name>X12_Monthly_Donation</name>
+        <choiceText>$12 Monthly Donation</choiceText>
+        <dataType>Currency</dataType>
+        <value>
+            <numberValue>12.0</numberValue>
+        </value>
+    </choices>
+    <choices>
+        <name>X365_Leadership_Donation</name>
+        <choiceText>$365 Leadership Donation</choiceText>
+        <dataType>Currency</dataType>
+        <value>
+            <numberValue>365.0</numberValue>
+        </value>
+    </choices>
+    <choices>
+        <name>X40_Basic_Donation</name>
+        <choiceText>$40 Basic Donation</choiceText>
+        <dataType>Currency</dataType>
+        <value>
+            <numberValue>40.0</numberValue>
+        </value>
+    </choices>
+    <interviewLabel>Pedge Form {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Pedge Form</label>
+    <processType>Flow</processType>
+    <screens>
+        <name>Pledge_Form</name>
+        <label>Pledge Form</label>
+        <locationX>237</locationX>
+        <locationY>207</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Thank_You</targetReference>
+        </connector>
+        <fields>
+            <name>Header</name>
+            <fieldText>&lt;DIV ALIGN=&quot;LEFT&quot;&gt;&lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:12px&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt;Your pledge will make a difference. Your donation is critical so that we can continue to offer our services. Please complete this form with the amount and type of your donation.&lt;/FONT&gt;&lt;/DIV&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>First_Name</name>
+            <dataType>String</dataType>
+            <fieldText>First Name</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Last_Name</name>
+            <dataType>String</dataType>
+            <fieldText>Last Name</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Email_Address</name>
+            <dataType>String</dataType>
+            <fieldText>Email Address</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Street</name>
+            <dataType>String</dataType>
+            <fieldText>Street</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>City</name>
+            <dataType>String</dataType>
+            <fieldText>City</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>State</name>
+            <dataType>String</dataType>
+            <fieldText>State</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Zip_Code</name>
+            <dataType>String</dataType>
+            <fieldText>Zip Code</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Pledge_Level</name>
+            <choiceReferences>X12_Monthly_Donation</choiceReferences>
+            <choiceReferences>X40_Basic_Donation</choiceReferences>
+            <choiceReferences>X365_Leadership_Donation</choiceReferences>
+            <dataType>Currency</dataType>
+            <fieldText>Pledge Level</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>false</isRequired>
+            <scale>0</scale>
+        </fields>
+    </screens>
+    <screens>
+        <name>Thank_You</name>
+        <label>Thank You</label>
+        <locationX>450</locationX>
+        <locationY>190</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>ThankYou</name>
+            <fieldText>Thank you for your Donation!!</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+    </screens>
+    <startElementReference>Pledge_Form</startElementReference>
+</Flow>
